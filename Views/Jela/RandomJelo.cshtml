@@ -1,0 +1,52 @@
+@model GdjeJesti.Models.Jelo
+
+@{
+    ViewData["Title"] = "Nasumično odabrano jelo";
+    var restoran = (Restoran)@ViewData["restoran"];
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <h4>Jelo</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Naziv)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Naziv)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Cijena)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Cijena)
+        </dd>
+    </dl>
+    <hr>
+    <h5 class="text-warning">Restoran u kome možete naručiti:</h5>
+    <dl>
+        <dt class = "col-sm-2 text-warning">
+            Naziv Restorana
+        </dt>
+        <dd class = "col-sm-10">
+            @restoran.Naziv
+        </dd>
+        <dt class = "col-sm-2 text-warning">
+            Adresa Restorana
+        </dt>
+        <dd class = "col-sm-10">
+            @restoran.Adresa
+        </dd>
+        <dt class = "col-sm-2 text-warning">
+            Telefon Restorana
+        </dt>
+        <dd class = "col-sm-10">
+            @restoran.Telefon
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index">Nazad na Listu Jela</a>
+</div>
